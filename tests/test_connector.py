@@ -669,6 +669,7 @@ async def test_tcp_connector_multiple_hosts_errors(loop: Any) -> None:
     established_connection.close()
 
 
+@pytest.mark.xfail(rason="temporarily reverted the timeout-catching change")
 async def test_tcp_connector_multiple_hosts_one_timeout(loop: Any) -> None:
     conn = aiohttp.TCPConnector()
 
